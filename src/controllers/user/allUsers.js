@@ -1,13 +1,14 @@
 import { getAll }  from '../../models/userModel.js'
-const allUsers = (req, res) => {
 
-    const users = getAll()
+const allUsers = async (req, res) => {
 
-    if (users) {
-        res.json({ users })
-    }
+    const users = await getAll()
+
+    // if (users) {
+    //     res.send(200).json({ users })
+    // }
     
-    res.json({ message: 'users not found.' }) 
+    res.json({ users }) 
 }
 
 export default allUsers
