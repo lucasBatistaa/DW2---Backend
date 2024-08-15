@@ -13,8 +13,4 @@ const getAll = () => {
     ]
 }
 
-const create = () => {
-
-}
-
-export default { getAll, create }
+export { getAll }

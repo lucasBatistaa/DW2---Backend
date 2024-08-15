@@ -1,0 +1,83 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Product",
+    "collectionId": "e6c24984-9911-41aa-8119-8a36760350d1",
+    "dateExported": "2024-08-14T23:15:24.573Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8fef2991-e295-4a4d-8a29-fdfb4805a124",
+            "colId": "e6c24984-9911-41aa-8119-8a36760350d1",
+            "containerId": "",
+            "name": "Create Product",
+            "url": "{{BASE_URL}}/product/create",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-08-08T00:01:22.778Z",
+            "modified": "2024-08-14T23:13:34.537Z",
+            "headers": []
+        },
+        {
+            "_id": "cc13f2a4-ba6d-43e2-80ee-3ef17a4687e8",
+            "colId": "e6c24984-9911-41aa-8119-8a36760350d1",
+            "containerId": "",
+            "name": "Change Name Product",
+            "url": "{{BASE_URL}}/product/changeName",
+            "method": "PATCH",
+            "sortNum": 15000,
+            "created": "2024-08-08T00:02:25.634Z",
+            "modified": "2024-08-14T23:13:37.843Z",
+            "headers": []
+        },
+        {
+            "_id": "2b812b2d-74cc-409b-9da1-ae1d1be3e389",
+            "colId": "e6c24984-9911-41aa-8119-8a36760350d1",
+            "containerId": "",
+            "name": "Product",
+            "url": "{{BASE_URL}}/product",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-08-08T00:01:30.009Z",
+            "modified": "2024-08-14T23:12:04.338Z",
+            "headers": []
+        },
+        {
+            "_id": "eaf78c1a-cae9-41f6-a26a-992ac514f3a2",
+            "colId": "e6c24984-9911-41aa-8119-8a36760350d1",
+            "containerId": "",
+            "name": "Edit Product",
+            "url": "{{BASE_URL}}/product/edit",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-08-08T00:01:39.882Z",
+            "modified": "2024-08-14T23:13:49.475Z",
+            "headers": []
+        },
+        {
+            "_id": "e0c01adf-6303-4d4c-94a4-d01904d5fce5",
+            "colId": "e6c24984-9911-41aa-8119-8a36760350d1",
+            "containerId": "",
+            "name": "All Product ",
+            "url": "{{BASE_URL}}/product/all",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-08-14T23:12:01.221Z",
+            "modified": "2024-08-14T23:12:01.221Z",
+            "headers": []
+        },
+        {
+            "_id": "276a6749-efce-497b-8761-986a6156128f",
+            "colId": "e6c24984-9911-41aa-8119-8a36760350d1",
+            "containerId": "",
+            "name": "Delete Product",
+            "url": "{{BASE_URL}}/product/delete",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-08-08T00:02:19.170Z",
+            "modified": "2024-08-14T23:14:18.791Z",
+            "headers": []
+        }
+    ],
+    "ref": "jDRM6lQaUKV99qGqyG1Av3sDa9kAYSLdge_lAWmy1_EvuP_TInsx4FcmuRtKFij1WwzVIPQrPqmB2uzS0Ugprg"
+}
