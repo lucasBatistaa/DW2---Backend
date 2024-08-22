@@ -1,10 +1,9 @@
-// import { allProducts } from "../../models/productModel"
+import { allProducts } from "../../models/productModel"
 
 const getProducts = async (req, res) => {
-    // const products = await allProducts()
-    const products = []
+    const products = await allProducts()
     
-    res.json({ products})
+    res.json({ products })
 }
 
 export default getProducts
