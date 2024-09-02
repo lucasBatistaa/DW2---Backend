@@ -6,7 +6,7 @@ const userById = async (req, res) => {
     const user = await getById(+id)
 
     if (user) {
-        res.json({ user })
+        res.status(200).json({ user })
     } 
 
     res.status(404).json({ 

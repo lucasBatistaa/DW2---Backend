@@ -4,7 +4,7 @@ const allUsers = async (req, res) => {
 
     const users = await getAll()
     
-    res.json({ users }) 
+    res.status(200).json({ users }) 
 }
 
 export default allUsers

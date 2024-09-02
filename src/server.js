@@ -5,6 +5,13 @@ import { ENVIRONMENT, HOST, PORT } from './config.js'
 
 const app = express()
 
+app.use(express.json())
+
+app.use('/', (req, res) => { 
+    res.json({
+        message: 'Welcome to API backend - DW2'
+    })
+})
 app.use('/user', userRouter)
 app.use('/product', productRouter)
 
