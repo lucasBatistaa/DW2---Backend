@@ -9,10 +9,12 @@ datasource db {
 }
 
 model user {
-  iduser   Int    @id @unique(map: "iduser_UNIQUE") @default(autoincrement())
+  id       Int    @id @unique(map: "iduser_UNIQUE") @default(autoincrement())
   name     String @db.VarChar(100)
   email    String @unique(map: "email_UNIQUE") @db.VarChar(200)
   password String @db.VarChar(256)
+
+  @@map("User")
 }
 
 model product {
@@ -21,4 +23,6 @@ model product {
   amount      Int
   description String  @db.VarChar(200)
   price       Decimal @db.Decimal(10, 2)
+
+  @@map("Product")
 }

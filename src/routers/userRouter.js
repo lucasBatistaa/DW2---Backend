@@ -9,16 +9,16 @@ import deleteUser from '../controllers/user/deleteUser.js'
 
 const router = express.Router()
 
-router.get('/', userById)
+router.get('/:id', userById)
 router.get('/all', allUsers)
 
 router.post('/create', createUser)
 
-router.put('/edit', editUser)
+router.put('/edit/:id', editUser)
 
-router.patch('/changeName', changeNameUser)
+router.patch('/changeName/:id', changeNameUser)
 
-router.delete('/delete', deleteUser)
+router.delete('/delete/:id', deleteUser)
 
 
 export default router
