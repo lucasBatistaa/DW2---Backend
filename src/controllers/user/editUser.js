@@ -4,7 +4,7 @@ const editUser = async (req, res) => {
     const { id } = req.params
     const user = req.body
 
-    user.id = +id
+    user.id = parseInt(id)
 
     const userEdited = await update(user)
 
@@ -13,11 +13,11 @@ const editUser = async (req, res) => {
             message: 'User updated with sucess!',
             user: userEdited
         })
+    } else {
+        res.status(401).json({
+            message: 'Error to update the user!'
+        })
     }
-
-    res.status(401).json({
-        message: 'Error to update the user!'
-    })
 }
 
 export default editUser

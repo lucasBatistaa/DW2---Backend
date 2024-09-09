@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 export const getAll = async () => {
     const allUsers = await prisma.user.findMany({
         select: {
-            iduser: true,
+            id: true,
             name: true,
             email: true
         }
@@ -15,9 +15,10 @@ export const getAll = async () => {
 }
 
 export const getById = async (id) => {
+
     const user = await prisma.user.findUnique({
         where: {
-            id
+            id: id
         },
         select: {
             id: true,
@@ -45,7 +46,7 @@ export const create = async (user) => {
 export const remove = async (id) => {
     const user = await prisma.user.delete({
         where: {
-            id
+            id: id
         },
         select: {
             id: true,
@@ -69,5 +70,23 @@ export const update = async (user) => {
             email: true
         }
     })
+    return result
+}
+
+export const updateName = async (user) => {
+    const result = await prisma.user.update({
+        where: {
+            id: user.id
+        },
+        data: {
+            name: user.name,
+        },
+        select: {
+            id: true,
+            name: true,
+            email: true
+        }
+    })
+    
     return result
 }
