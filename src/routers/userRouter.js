@@ -10,7 +10,7 @@ import deleteUser from '../controllers/user/deleteUser.js'
 const router = express.Router()
 
 router.get('/:id', userById)
-router.get('/all', allUsers)
+router.get('/', allUsers)
 
 router.post('/create', createUser)
 
