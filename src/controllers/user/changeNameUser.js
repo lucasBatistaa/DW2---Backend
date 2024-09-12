@@ -1,23 +1,38 @@
 import { updateName } from '../../models/userModel.js'
 
 const changeNameUser = async (req, res) => {
-    const { id } = req.params
+    const { id } = parseInt(req.params)
     const { name } = req.body
 
-    const user = { id: parseInt(id), name }
+    const user = { id, name }
 
-    const userUpdated = await updateName(user)
+    console.log(user)
 
-    if (userUpdated) {
-        return res.status(200).json({
-            message: 'Name user updated with sucess!',
-            user: userUpdated
+    try {
+        if (!id || !name) {
+            console.log('aq')
+            const result = await updateName(user)
+
+            if (result.user) {
+                return res.status(200).json({
+                    user: result.user,
+                    message: result,
+                })
+            } else {
+                return res.status(404).json({
+                    message: result
+                })
+            }
+        } else {
+            return res.status(400).json({
+                message: 'Necessary the params id and name!'
+            })
+        }
+    } catch (error) {
+        return res.status(401).json({
+            message: error.message
         })
     }
-
-    return res.status(401).json({
-        message: 'Error to update the user!'
-    })
 }
 
 export default changeNameUser

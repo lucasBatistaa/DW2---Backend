@@ -111,6 +111,20 @@ export const update = async (user) => {
 }
 
 export const updateName = async (user) => {
+
+    const isIdUsed = await prisma.user.findUnique({
+        where: {
+            id: user.id
+        },
+    })
+
+    if (!isIdUsed) {
+        return ({
+            user: '',
+            message: 'User not found.'
+        })
+    }
+
     const result = await prisma.user.update({
         where: {
             id: user.id
@@ -124,6 +138,9 @@ export const updateName = async (user) => {
             email: true
         }
     })
-    
-    return result
+
+    return ({
+        user: result,
+        message: 'Name user updated with sucess!'
+    })
 }

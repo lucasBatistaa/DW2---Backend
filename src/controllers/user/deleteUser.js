@@ -1,17 +1,24 @@
 import { remove } from '../../models/userModel.js'
 
 const deleteUser = async (req, res) => {
-    const { id } = req.params
+    try {
+        const { id } = parseInt(req.params)
+        const userRemoved = await remove(id) 
 
-    const userRemoved = await remove(parseInt(id)) 
-
-    if (userRemoved) {
-        res.status(200).json({
+        return res.status(200).json({
             message: 'User removed with sucess!'
         })
-    } else {
-        res.status(404).json({
-            message: 'User not found.'
+
+    } catch (error) {
+
+        if (error?.code === 'P2025') {
+            return res.status(404).json({
+                message: 'User not found.'
+            })
+        }
+
+        return res.status(500).json({
+            message: 'Server error, try again!'
         })
     }
 }
