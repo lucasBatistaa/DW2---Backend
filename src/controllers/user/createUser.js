@@ -15,16 +15,23 @@ const createUser = async (req, res) => {
 
         const userCreated = await create(userValidated.data)
 
-        if (userCreated) {
-            return res.status(201).json({
-                message: 'User created with sucess!',
-                user: userCreated
+        if (!userCreated)
+            return res.status(500).json({
+                error: "Erro ao criar usuário"
             })
-        }
-    } catch (error) {
-        return res.status(500).json({
-            message: 'Error to create user!'
+
+        return res.json({
+            success: "Usuário criado com sucesso!",
+            user: result
         })
+    } catch (error) {
+        console.log(error)
+        if (error?.code === 'P2002')
+            return res.status(400).json({
+                error: "Erro ao criar usuário, verifique os dados!",
+                fieldErrors: { email: ['Email já cadastrado'] }
+            })
+        next(error)
     }
 }
 
